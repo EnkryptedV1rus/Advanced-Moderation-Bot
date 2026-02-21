@@ -1,4 +1,4 @@
-# Advanced-Moderation-Bot
+# Advanced Moderation Bot
 
 An advanced Discord moderation bot designed for servers that need robust protection. Features include:
 
