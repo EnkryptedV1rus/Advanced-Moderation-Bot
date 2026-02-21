@@ -14,7 +14,7 @@ Includes per‑server configuration, persistent storage, and a wide range of mod
 - **Slash Commands** (global) and **Prefix Commands** (customizable prefix).
 - **Logging**: All moderation actions are logged to a designated channel.
 
-## Prerequisites
+## What you need
 
 - [Node.js](https://nodejs.org/) v16.9.0 or higher
 - A Discord bot token ([Discord Developer Portal](https://discord.com/developers/applications))
@@ -86,4 +86,4 @@ You can safely edit this file while the bot is offline, but be careful with the 
 
 License
 ---
-MIT
+[MIT](https://github.com/EnkryptedV1rus/Advanced-Moderation-Bot/tree/f1ec9400a8cc3feb3c2f734dabedb7d5f2607b06?tab=License-1-ov-file)
