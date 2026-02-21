@@ -1,83 +1,87 @@
 # Advanced Discord Moderation Bot
 
-A feature-rich Discord moderation bot for servers that need protection.  
-Includes automated moderation, logging, raid detection, warnings, lockdowns, and fun commands.
-
----
+A powerful, feature‑rich moderation bot for Discord, written in JavaScript using discord.js v14.  
+Includes per‑server configuration, persistent storage, and a wide range of moderation commands.
 
 ## Features
 
-- **Moderation**: Ban, kick, mute, warn, purge, slowmode, lockdown, nick, voice kick/move  
-- **Automated moderation**: Detects spam, raids, and malicious links  
-- **Logging**: Tracks deleted messages, joins/leaves, and moderation actions  
-- **Configuration**: Per-server prefix and log channel  
-- **Warning system**: Track and manage warnings per user  
-- **Fun commands**: `howgay`, `say`, `ping`  
-- **Slash & prefix commands** (customizable prefix)  
-
----
+- **Moderation**: Ban, kick, mute (timeout), warn, purge, slowmode, lockdown, nick, voice kick/move, and more.
+- **Configuration**: Per‑server prefix and log channel (stored in JSON).
+- **Warning System**: Track warnings per user, list them, delete specific warnings.
+- **Lockdown**: Lock channels with automatic unlocking, restoring original permissions.
+- **Fun Commands**: `howgay`, `say`, `ping`.
+- **Safe Mode**: Users can toggle their messages to be reposted as embeds.
+- **Slash Commands** (global) and **Prefix Commands** (customizable prefix).
+- **Logging**: All moderation actions are logged to a designated channel.
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) v16.9.0 or higher  
-- [Python](https://www.python.org/downloads/) v3.10+ (if you want to run scripts that need Python)  
-- A Discord bot token ([Discord Developer Portal](https://discord.com/developers/applications))  
-
----
+- [Node.js](https://nodejs.org/) v16.9.0 or higher
+- A Discord bot token ([Discord Developer Portal](https://discord.com/developers/applications))
+- Git (optional)
+- [Visual Studio Code](https://code.visualstudio.com/), Google Antigravity, or [PyCharm](https://www.jetbrains.com/pycharm/download/?section=windows)
 
 ## Installation
 
-1. **Clone the repository**
-
-git clone https://github.com/yourusername/your-repo.git
-
-cd your-repo
-
-
-2. **Install Node.js dependencies**
-
+**Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/your-repo.git
+   cd your-repo
+```
+Install dependencies
+```bash
 npm install discord.js dotenv
+```
 
+Create a `.env` file in the root directory and add your bot token:
 
-3. **Create a `.env` file** in the root folder and add your bot token:
-
+```env
 TOKEN=your_bot_token_here
-
-
-4. **Invite the bot to your server**  
-Use this URL (replace CLIENT_ID with your bot’s ID):
-
+```
+Invite the bot to your server
+Use the following OAuth2 URL generator (replace CLIENT_ID with your bot's client ID):
 https://discord.com/api/oauth2/authorize?client_id=CLIENT_ID&permissions=8&scope=bot%20applications.commands
+Permissions: Administrator (for simplicity) – you can customise the permissions later.
 
+Run the bot
 
-5. **Run the bot**
-
+```bash
 node index.js
+```
+For production, consider using [PM2](https://pm2.keymetrics.io/):
 
-
-**Optional**: Use PM2 to keep the bot running:
-
+```bash
 npm install -g pm2
 pm2 start index.js --name "mod-bot"
+```
+Usage
+Slash commands – Type `/` and browse the list.
 
+Prefix commands – Default prefix is `!`. Use `!help` to see available message commands.
 
+Change the prefix with `/prefix new_prefix` (Admin only).
+
+Set a log channel with `/log channel #`channel (Admin only).
+
+## Commands Overview
+| Category      | Commands                                                                                                                            |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| Moderation    | /ban, /unban, /kick, /mute, /unmute, /warn, /warnings, /delwarn, /purge, /slowmode, /lockdown, /unlockdown, /nick, /vckick, /vcmove |
+| Configuration | /prefix, /log channel, /config                                                                                                      |
+| Fun           | /ping, /howgay, /say                                                                                                                |
+| Utility       | /safemode, /checksafemode, /help                                                                                                    |
+
+## Data Storage
+All server settings (prefix, log channel, warnings, lockdown states) are stored in guildData.json.
+You can safely edit this file while the bot is offline, but be careful with the JSON structure.
+
+## 🧩 Overview/Summary
+
+1. **Save the script** as `index.js` in your project folder.
+2. **Create a `.env` file** with your token.
+3. **Run `npm init -y`** (if you haven't already) and then `npm install discord.js dotenv`.
+4. **Test the bot** in a server.
+
+License
 ---
-
-## Usage
-
-- Slash commands: Type `/` and browse commands  
-- Prefix commands: Default `!` (use `!help`)  
-- Set prefix: `/prefix new_prefix` (Admin only)  
-- Set log channel: `/log channel #channel` (Admin only)  
-
----
-
-## Contributing
-
-Pull requests are welcome! For major changes, open an issue first to discuss.  
-
----
-
-## License
-
 MIT
