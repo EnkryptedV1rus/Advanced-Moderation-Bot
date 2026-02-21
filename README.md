@@ -86,4 +86,4 @@ You can safely edit this file while the bot is offline, but be careful with the 
 
 License
 ---
-[MIT](https://github.com/EnkryptedV1rus/Advanced-Moderation-Bot/tree/f1ec9400a8cc3feb3c2f734dabedb7d5f2607b06?tab=License-1-ov-file)
+[MIT]
