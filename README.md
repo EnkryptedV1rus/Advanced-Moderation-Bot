@@ -40,6 +40,7 @@ TOKEN=your_bot_token_here
 ```
 Invite the bot to your server
 Use the following OAuth2 URL generator (replace CLIENT_ID with your bot's client ID):
+
 https://discord.com/api/oauth2/authorize?client_id=CLIENT_ID&permissions=8&scope=bot%20applications.commands
 Permissions: Administrator (for simplicity) – you can customise the permissions later.
 
